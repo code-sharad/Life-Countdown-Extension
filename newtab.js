@@ -6,24 +6,37 @@ chrome.storage.local.get(["countdownStart", "countdownDuration"], (data) => {
     const elapsed = Math.floor((Date.now() - data.countdownStart) / 1000);
     const remainingSeconds = data.countdownDuration - elapsed;
     startCountdown(remainingSeconds);
+    
   }
 });
 
+async function getQuotes() {}
 
+const countdownContainer = document.getElementById("countdown-timer");
+const yearsContainer = document.querySelector("#years");
+const daysContainer = document.querySelector("#days");
+const hoursContainer = document.querySelector("#hours");
+const minutesContainer = document.querySelector("#minutes");
+const secondsContainer = document.querySelector("#seconds");
+const countdownNum = document.getElementById("countdown");
+const countDownName = document.getElementById("name");
 
+countDownName.style.display = "none";
+countdownNum.style.display = "none";
 
 function startCountdown(remainingSeconds) {
-  const countdownContainer = document.getElementById("countdown-timer");
-  const yearsContainer = document.querySelector("#years")
-  const daysContainer = document.querySelector("#days")
-  const hoursContainer = document.querySelector("#hours")
-  const minutesContainer = document.querySelector("#minutes")
-  const secondsContainer = document.querySelector("#seconds")
-
+  if (remainingSeconds > 0) {
+    countDownName.style.display = "flex";
+    countdownNum.style.display = "flex";
+    countdownNum.style.marginBottom = "14rem";
+  }
   function updateTimer() {
     if (remainingSeconds <= 0) {
-      countdownContainer.textContent = "Time is up!";
+      countdownContainer.textContent =
+        "Time is up! Click on the Life Countdown extension icon to set timer";
       return;
+    }else{
+        countdownContainer.textContent = "";
     }
 
     const years = Math.floor(remainingSeconds / (365 * 24 * 3600));
@@ -39,7 +52,7 @@ function startCountdown(remainingSeconds) {
     daysContainer.textContent = days;
     hoursContainer.textContent = hours;
     minutesContainer.textContent = minutes;
-    secondsContainer.textContent = seconds
+    secondsContainer.textContent = seconds;
 
     remainingSeconds--;
     setTimeout(updateTimer, 1000);
