@@ -69,7 +69,7 @@ button:hover {
 
 #countdown{
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   color: black;
 }
 
@@ -105,9 +105,29 @@ button:hover {
   display: flex;
   justify-content: space-between;
   text-align: center;
+ position: relative; 
 }
-
-#name *{
-  margin-left: 2.1rem;
+#name div:nth-child(5){
+  position: absolute;
+  right: 250px;
+}
+#name div:nth-child(4){
+  position: absolute;
+  right: 470px;
+}
+#name div:nth-child(3){
+  position: absolute;
+  right: 720px;
+}
+#name div:nth-child(2){
+  position: absolute;
+  right: 950px;
+}
+#name div:nth-child(6){
+  position: absolute;
+  right: 50px;
+}
+/* #name *{
+  /* margin-left: 1.1rem; */
   /* border: 2px solid black; */
-}
+/* } */ 
