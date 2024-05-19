@@ -2,6 +2,7 @@
 
 This project is a Chrome extension that provides a life countdown timer. It displays the time remaining in your life every time you open a new tab, reminding you to make the most of your time.
 
+![image](https://github.com/code-sharad/Life-Countdown-Extension/assets/61672294/44fe9ff4-c149-4c14-ad5d-4402d9c46ff6)
 
 ## 🎉 Features
 
